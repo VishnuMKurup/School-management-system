@@ -1,0 +1,29 @@
+<form class="form-signin" [formGroup]="loginForm" (ngSubmit)="login()">
+  <h1 class="h3 mb-3 font-weight-normal">{{ name }}</h1>
+  <span class="text-danger">{{ error }}</span>
+  <input
+    type="text"
+    class="form-control my-1 p-2"
+    formControlName="username"
+    placeholder="username"
+    autofocus
+  />
+  <div *ngIf="f.username.errors" class="text-danger">
+    <div *ngIf="f.username.errors.required">username is required</div>
+  </div>
+  <input
+    type="password"
+    id="password"
+    class="form-control my-1 p-2"
+    formControlName="password"
+    placeholder="password"
+  />
+  <div *ngIf="f.password.errors" class="text-danger">
+    <div *ngIf="f.password.errors.required">Password is required</div>
+  </div>
+  <div>
+    <button class="btn-success" [disabled]="loginForm.invalid" type="submit">
+      Login
+    </button>
+  </div>
+</form>
