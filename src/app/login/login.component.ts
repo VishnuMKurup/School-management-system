@@ -30,7 +30,6 @@ export class LoginComponentComponent implements OnInit {
     this.authService.logout();
   }
 
-  // convenience getter for easy access to form fields
   get f() {
     return this.loginForm.controls;
   }
@@ -51,10 +50,8 @@ export class LoginComponentComponent implements OnInit {
           (x) => x.username == model.username && x.password == model.password
         )
       ) {
-        // TODO: replace these two lines with actual login
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('token', this.f.username.value);
-        // redirect to school page (using school name as url param)
         this.router.navigate([this.returnUrl, this.f.username.value]);
       } else {
         this.error = 'Please double check your username and password';
