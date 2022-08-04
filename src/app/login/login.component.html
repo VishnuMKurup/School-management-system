@@ -22,7 +22,11 @@
     <div *ngIf="f.password.errors.required">Password is required</div>
   </div>
   <div>
-    <button class="btn-success" [disabled]="loginForm.invalid" type="submit">
+    <button
+      class="btn btn-lg btn-primary btn-success my-2"
+      [disabled]="loginForm.invalid"
+      type="submit"
+    >
       Login
     </button>
   </div>
